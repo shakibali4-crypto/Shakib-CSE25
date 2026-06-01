@@ -1,15 +1,35 @@
+import { useState } from 'react' 
 import './App.css' 
-import Student from './Student' 
  
 function App() { 
  
+  const [count, setCount] = useState(0) 
+ 
+  const increment = () => { 
+    setCount(count + 1) 
+  } 
+ 
+  const decrement = () => { 
+    setCount(count - 1) 
+  } 
+ 
+  const reset = () => { 
+    setCount(0) 
+  } 
+ 
   return ( 
     <> 
-      <h2>Student Information</h2> 
+      <h2>React Counter Application</h2> 
  
-      <Student name="Raj" course="B.tech" marks="90" /> 
-      <Student name="Ram" course="M.tech" marks="95" /> 
-      <Student name="Rohan" course="MCA" marks="99" /> 
+      <h2>{count}</h2> 
+ 
+      <button onClick={increment}>Increment</button> 
+      <br /><br /> 
+ 
+      <button onClick={decrement}>Decrement</button> 
+      <br /><br /> 
+ 
+      <button onClick={reset}>Reset</button> 
     </> 
   ) 
 } 
